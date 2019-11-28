@@ -9,6 +9,14 @@
 
 on run username
 
+	#
+	# Check to see if we specified a username.
+	#
+	if username is {} then
+		display alert "The first argument needs to be the username."
+		return 
+	end if
+
 	set keyring_cmd to "/usr/local/bin/keyring get bigip_pass " & username
 	set mypass to do shell script (keyring_cmd)
 
