@@ -16,7 +16,7 @@ on run argv
 	set otp to item 2 of argv
 
   # Get password from keyring
-	set keyring_cmd to "/usr/local/bin/keyring get bigip_pass " & username
+	set keyring_cmd to "keyring get bigip_pass " & username
 	try
 		set mypass to do shell script (keyring_cmd)
 	on error
